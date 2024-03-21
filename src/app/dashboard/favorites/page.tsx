@@ -1,5 +1,10 @@
 import { PokemonGrid, PokemonResponse, SimplePokemon } from "@/pokemons";
 
+export const metadata = {
+  title: "Favoritos",
+  description: "Favoritos",
+};
+
 export default async function FavoritesPage() {
   return (
     <div className="flex flex-col">
