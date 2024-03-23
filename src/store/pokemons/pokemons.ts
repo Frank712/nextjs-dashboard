@@ -5,9 +5,14 @@ interface PokemonState {
   [key: string]: SimplePokemon;
 }
 
-const initialState: PokemonState = {
-  "1": { id: "1", name: "bulbasaur" },
+const getInitalState = (): PokemonState => {
+  const favorites = JSON.parse(
+    localStorage.getItem("favorite-pokemons") ?? "{}"
+  );
+  return favorites;
 };
+
+const initialState: PokemonState = { ...getInitalState() };
 
 const pokemonsSlice = createSlice({
   name: "pokemons",
